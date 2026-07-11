@@ -24,11 +24,10 @@ while True:
 
         au=[]
         bv=[]
-        for i in range(len(u)):
-            au.append(u[i]*a)
-            bv.append(v[i]*b)
         result=[]
         for i in range(lenOfVector):
+            au.append(u[i]*a)
+            bv.append(v[i]*b)
             result.append(au[i]+bv[i])
 
         print("au=",au)
@@ -42,5 +41,3 @@ while True:
         print("DotProduct:",dotProduct)
         end = time.perf_counter()
         print(f"Time = {end - start:.10f} seconds")
-
-        
