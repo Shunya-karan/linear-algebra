@@ -35,4 +35,7 @@ while True:
     elif(userInput=="2"):
         for i in range(len(u)):
             dotProduct +=(u[i]*v[i])
+            # dotProduct=np.dot(u,v)
         print("DotProduct:",dotProduct)
+    else:
+        print("Invalid choices")
