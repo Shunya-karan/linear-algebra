@@ -36,14 +36,15 @@ try:
 
             # result=[]
             # for i in range(r):
-            #     vm=[]
+            #     row=[]
             #     for j in range(P):
             #         total=0
             #         for k in range (c):
-            #             total+=N[i][k]*M[k][j]
-            #         vm.append(total)
-            #     result.append(vm)
+            #             total+=M[i][k]*N[k][j]
+            #         row.append(total)
+            #     result.append(row)
             # result=np.array(result)
+
             result=np.dot(M,N)
             print("Multiplication =MxN \n",result)
 
@@ -51,13 +52,11 @@ try:
             # Length of vector==Number of Column In Matrix 
             v=[]
             for i in range(c):
-                val=int(input(f"Enter the value for vector elemene v[{i+1}]"))
+                val=int(input(f"Enter the value for vector element v[{i+1}]"))
                 v.append(val)
-            v=np.array(v)
             print("\nvector v= ",v)
-            result=np.dot(M,v)
-            print(f"Vector-Matrix=",np.matrix
-                  (result))
+            result=np.dot(v,M)
+            print(f"Vector-Matrix=",result)
         else:
             print("Invalid Choice! Please enter 1, 2, or 3.")
 
