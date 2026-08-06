@@ -15,7 +15,7 @@ try:
     for i in range(r):
         row=[]
         for j in range(c):
-            column=int(input(f"Enter MATRIX value at row: {i+1} column: {j+1}: "))
+            column=int(input(f"Enter MATRIX value at M[{i+1}{j+1}]: "))
             row.append(column)
         matrix.append(row)
     matrix=np.array(matrix)
@@ -36,7 +36,8 @@ try:
            
         elif userInput ==3:
             print("Column")
-            for i in range(c):
+            for i in range(c
+                           ):
                 col=[]
                 for j in range(r):
                     col.append(matrix[j][i])
@@ -59,5 +60,5 @@ try:
             print(matrix.T)
    
        
-except ValueError as e:
+except Exception as e:
         print(e)
