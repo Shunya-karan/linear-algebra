@@ -20,7 +20,7 @@ try:
         if(userInput=="3"):
             break
 
-        elif(userInput=="2"):\
+        elif(userInput=="2"):
         #Number of Column in matrix M == Number of rows in matrix
             P=int(input("Enter the Number of column for matrix N:"))
             
@@ -56,7 +56,8 @@ try:
             v=np.array(v)
             print("\nvector v= ",v)
             result=np.dot(M,v)
-            print(f"Vector-Matrix=",result)
+            print(f"Vector-Matrix=",np.matrix
+                  (result))
         else:
             print("Invalid Choice! Please enter 1, 2, or 3.")
 
