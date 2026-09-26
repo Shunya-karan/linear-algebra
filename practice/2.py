@@ -1,3 +1,6 @@
+# Plotting a set of complex numbers
+# ● Creating a new plot by rotating the given number by a 90, 180, 270 degrees and
+# also by scaling by a number a = 1/2, a = 1/3, a = 2 etc.
 import matplotlib.pyplot as plt
 
 x,y=map(float,input("Enter complex number part (real,img)").split(","))

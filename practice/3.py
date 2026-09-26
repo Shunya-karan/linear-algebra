@@ -1,3 +1,9 @@
+# Demonstrates the following:
+# ● Enter a vector u as a n-list
+# ● Enter another vector v as a n-list
+# ● Find the vector au + bv for different values of a and b
+# ● Find the dot product of u and v
+
 import numpy as np
 
 n=int(input("Enter the length of the vector: "))

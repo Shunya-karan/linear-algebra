@@ -1,8 +1,9 @@
-# Demonstrates the following: 
-# # ● Enter an r by c matrix M (r and c being positive integers)
-#  # ● Display M in matrix format # ● Display the rows and columns of the matrix M 
-# # ● Find the scalar multiplication of M for a given scalar. 
-# # ● Find the transpose of the matrix M
+# Demonstrates the following:
+# ● Enter an r by c matrix M (r and c being positive integers)
+# ● Display M in matrix format
+# ● Display the rows and columns of the matrix M
+# ● Find the scalar multiplication of M for a given scalar.
+# ● Find the transpose of the matrix M.
 
 import numpy as np
 r=int(input("Enter the number of rows"))

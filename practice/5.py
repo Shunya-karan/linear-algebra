@@ -1,3 +1,7 @@
+# Demonstrates the following:
+# ● Find the vector –matrix multiplication of a r by c matrix M with a c-vector u.
+# ● Find the matrix-matrix product of M with a c by p matrix N.
+
 import numpy as np
 
 r=int(input("Enter Number of rows: "))
