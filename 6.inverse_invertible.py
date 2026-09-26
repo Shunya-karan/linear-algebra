@@ -1,27 +1,34 @@
 import numpy as np
 
 try:
-    while True:
-        r=int(input("Enter the Form of Matrix :"))
+    r = int(input("Enter order of matrix: "))
 
-        Matrix1 = []
-        for i in range (r):
-            rows=[]
-            for j in range(r):
-                column = int(input(f"Enter value for A{i+1}{j+1} : "))
-                rows.append(column)
-            Matrix1.append (rows)
-        Matrix1=np.array(Matrix1)
-        print("Matrix A = \n",Matrix1) 
+    A = []
 
-        determinat = np.linalg.det(Matrix1)
-        print(int(determinat))
-        if determinat == 0:
-            print("Matrix Is Singular \nA Is Not Invertible \nA Inverse Does Not Exists")
-        else:
-            print("Matrix Is Non-Singular \nA Is Invertible \nA Inverse Exists")  
-            inverse = np.linalg.inv(Matrix1)  
-            print("A Inverse : ",inverse)
-    
+    for i in range(r):
+        row = []
+        for j in range(r):
+            value = int(input(f"Enter A[{i+1}][{j+1}]: "))
+            row.append(value)
+        A.append(row)
+
+    A = np.array(A)
+
+    print("\nMatrix A =")
+    print(A)
+
+    det = np.linalg.det(A)
+
+    if np.isclose(det, 0):
+        print("\nMatrix is Singular")
+        print("A is NOT invertible")
+    else:
+        print("\nMatrix is Non-Singular")
+        print("A is Invertible")
+
+        inverse = np.linalg.inv(A)
+
+        print("\nInverse of A =")
+        print(inverse)
 except ValueError as e:
     print('Invalid Value ',e)
