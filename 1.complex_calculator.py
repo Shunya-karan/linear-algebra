@@ -57,36 +57,3 @@ except Exception as e:
 
 
 
-#while True:
-# try:
-# real1, imag1 = map(int, input(&quot;Enter 1st complex number
-# (real,imag): &quot;).split(&quot;,&quot;))
-# real2, imag2 = map(int, input(&quot;Enter 2nd complex number
-# (real,imag): &quot;).split(&quot;,&quot;))
-# break
-# except ValueError:
-# print(&quot;Invalid input! Please enter in format: real,imag
-# (example: 3,4)&quot;)
-# z1=complex(real1, imag1)
-# z2=complex(real2, imag2)
-# while True:
-# opr = input(&#39;Operations (add=1 , conjugate=2, mul=3, subtract=4,
-# multiply_by_its_conjugate=5) s to stop:&#39;)
-# if opr==&quot;1&quot;:
-# print(&quot;Z1 + Z2: &quot;, z1+z2)
-# elif opr==&quot;2&quot;:
-# print(&quot;Conjugate of z1: &quot;,z1.conjugate())
-# print(&quot;Conjugate of z2: &quot;,z2.conjugate())
-# elif opr==&quot;3&quot;:
-# print(&quot;Multiplication: &quot;,z1*z2)
-# elif opr==&quot;4&quot;:
-# print(&quot;Subtraction: &quot;, z1-z2)
-# elif opr==&quot;5&quot;:
-# cz1 = z1.conjugate()
-# cz2 = z2.conjugate()
-# print(&quot;Multiplication of z1 conjugate: &quot;,cz1*z1)
-# print(&quot;Multiplication of z2 conjugate: &quot;,cz2*z2)
-# elif opr==&quot;s&quot;:
-# break
-# else:
-# print(&quot;wrong input&quot;)
