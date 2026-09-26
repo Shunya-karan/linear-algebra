@@ -1,64 +1,53 @@
-# Demonstrates the following:
-# ● Enter an r by c matrix M (r and c being positive integers)
-# ● Display M in matrix format
-# ● Display the rows and columns of the matrix M
-# ● Find the scalar multiplication of M for a given scalar.
-# ● Find the transpose of the matrix M.
+# Demonstrates the following: 
+# # ● Enter an r by c matrix M (r and c being positive integers)
+#  # ● Display M in matrix format # ● Display the rows and columns of the matrix M 
+# # ● Find the scalar multiplication of M for a given scalar. 
+# # ● Find the transpose of the matrix M
+import numpy as np
 
-import numpy as np;
-try:
-    r=int(input("Enter the length of the Row :"))
-    c=int(input("Enter the length of the Column :"))
+r = int(input("Enter number of rows: "))
+c = int(input("Enter number of columns: "))
 
-    matrix=[]
-    transpose=[]
-    for i in range(r):
-        row=[]
-        for j in range(c):
-            column=int(input(f"Enter MATRIX value at M[{i+1}{j+1}]: "))
-            row.append(column)
-        matrix.append(row)
-    matrix=np.array(matrix)
+matrix = []
 
-    while True:
-        userInput=int(input("1. Display Matrix\n2. Display Row\n3. Display columns\n4. Scalar Multiplications \n5. Transpose \n6. Exit\nEnter the Choice : "))
-        
-        if(userInput==6):
-            break
-        if userInput==1:
-            print("Matrix")
-            print(matrix)
+for i in range(r):
+    row = []
+    for j in range(c):
+        row.append(int(input(f"Enter M[{i+1},{j+1}]: ")))
+    matrix.append(row)
 
-        elif userInput==2:
-            print("ROWS")
-            for i in range(r):
-                print(f"ROWS {i+1}",matrix[i])
-           
-        elif userInput ==3:
-            print("Column")
-            for i in range(c
-                           ):
-                col=[]
-                for j in range(r):
-                    col.append(matrix[j][i])
-                print(f"Column {i+1}",np.array(col))
+matrix = np.array(matrix)
 
+while True:
+    print("\n1. Display Matrix")
+    print("2. Display Rows")
+    print("3. Display Columns")
+    print("4. Scalar Multiplication")
+    print("5. Transpose")
+    print("6. Exit")
 
-        elif userInput==4:
-            print("Scalar Multiplication")
-            scalar=int(input("Enter the value for scalar multiplication for matrix m :"))
-            print(matrix*scalar)
+    choice = int(input("Enter choice: "))
 
-        elif userInput==5:
-            # for i in range(c):
-            #     col=[]
-            #     for j in range(r):
-            #         col.append(matrix[j][i])
-            #     transpose.append(col)
-            # transpose=np.array(transpose)
+    if choice == 1:
+        print(matrix)
 
-            print(matrix.T)
-   
-       
-except Exception as e:
-        print(e)
+    elif choice == 2:
+        for i in range(r):
+            print("Row", i + 1, "=", matrix[i])
+
+    elif choice == 3:
+        for i in range(c):
+            print("Column", i + 1, "=", matrix[:,i])
+
+    elif choice == 4:
+        scalar = int(input("Enter scalar: "))
+        print(matrix * scalar)
+
+    elif choice == 5:
+        print(matrix.T)
+
+    elif choice == 6:
+        break
+
+    else:
+        print("Invalid choice")
