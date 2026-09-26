@@ -29,10 +29,10 @@ while True:
     choice=int(input("Enter Choice: "))
 
     if(choice==1):
-        print(matrix[1])
+        print(matrix)
     elif(choice==2):
         for i in range(r):
-            print(f"Row{i+1}={matrix}")
+            print(f"Row{i+1}={matrix[i]}")
     elif(choice==3):
         for i in range(c):
             print(f"Columns{i+1}={matrix[:,i]}")

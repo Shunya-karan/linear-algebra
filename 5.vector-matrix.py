@@ -1,64 +1,83 @@
-import numpy as np;
-try:
-    print("Vector Matrix & Matrix-Matrix multiplication\n")
-    r=int(input("Enter the number of row for matrix M: "))
-    c=int(input("Enter the number of column for matrix M: "))
-    M=[]
+import numpy as np
 
-    for i in range (r):
-        rows=[]
-        for j in range(c):
-            column = int(input(f" Enter the values at M[{i+1}][{j+1}]"))
-            rows.append(column)
-        M.append (rows)
-    M=np.array(M)
-    print("Matrix M =\n",M)  
+print("Vector-Matrix & Matrix-Matrix Multiplication")
 
-    while True:
-        userInput = input("\nEnter Choice\n1. Vector-matrix\n2. MATRIX-MATRIX\n3. Exit: ")
-        
-        if(userInput=="3"):
-            break
+r = int(input("Enter rows of matrix M: "))
+c = int(input("Enter columns of matrix M: "))
 
-        elif(userInput=="2"):
-        #Number of Column in matrix M == Number of rows in matrix
-            P=int(input("Enter the Number of column for matrix N:"))
-            
-            N=[]
-            for i in range (c):
-                rows=[]
-                for j in range(P):
-                    column = int(input(f" Enter the values at N[{i+1}][{j+1}]"))
-                    rows.append(column)
-                N.append (rows)
-            N=np.array(N)
-            print("Matrix N =\n",N,"\n")   
+M = []
 
-            # result=[]
-            # for i in range(r):
-            #     row=[]
-            #     for j in range(P):
-            #         total=0
-            #         for k in range (c):
-            #             total+=M[i][k]*N[k][j]
-            #         row.append(total)
-            #     result.append(row)
-            # result=np.array(result)
+# Create Matrix M
+for i in range(r):
+    row = []
+    for j in range(c):
+        value = int(input(f"Enter M[{i+1}][{j+1}]: "))
+        row.append(value)
+    M.append(row)
 
-            result=np.dot(M,N)
-            print("Multiplication =MxN \n",result)
+M = np.array(M)
 
-        elif(userInput=="1"):
-            # Length of vector==Number of Column In Matrix 
-            v=[]
-            for i in range(c):
-                val=int(input(f"Enter the value for vector element v[{i+1}]"))
-                v.append(val)
-            print("\nvector v= ",v)
-            result=np.dot(v,M)
-            print(f"Vector-Matrix=",result)
-        else:
-            print("Invalid Choice! Please enter 1, 2, or 3.")
+print("\nMatrix M =")
+print(M)
 
-except Exception as e:
-    print(e)
+while True:
+
+    print("\n1. Vector-Matrix Multiplication")
+    print("2. Matrix-Matrix Multiplication")
+    print("3. Exit")
+
+    choice = input("Enter choice: ")
+
+    # Exit
+    if choice == "3":
+        break
+
+    # Vector-Matrix
+    elif choice == "1":
+
+        v = []
+
+        # Length of vector = rows of M
+        for i in range(r):
+            value = int(input(f"Enter v[{i+1}]: "))
+            v.append(value)
+
+        v = np.array(v)
+
+        print("Vector v =", v)
+
+        result = np.dot(v, M)
+
+        print("v × M =", result)
+
+    # Matrix-Matrix
+    elif choice == "2":
+
+        # M is r × c
+        # N must be c × p
+
+        p = int(input("Enter columns of matrix N: "))
+
+        N = []
+
+        for i in range(c):
+            row = []
+
+            for j in range(p):
+                value = int(input(f"Enter N[{i+1}][{j+1}]: "))
+                row.append(value)
+
+            N.append(row)
+
+        N = np.array(N)
+
+        print("\nMatrix N =")
+        print(N)
+
+        result = np.dot(M, N)
+
+        print("\nM × N =")
+        print(result)
+
+    else:
+        print("Invalid choice")
