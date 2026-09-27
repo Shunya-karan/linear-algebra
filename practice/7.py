@@ -15,6 +15,7 @@ m=sp.Matrix(m)
 
 sp.pprint(m)
 
+# sp.pprint(m.echelon_form())
 rrf,pivot=m.rref()
 sp.pprint(rrf)
 print(pivot)

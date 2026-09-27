@@ -24,8 +24,8 @@ print(vectorA)
 print(vectorB)
 
 while True:
-    userInput=int(input("Enter What You want to do\n1.Projection of b orthogonal to a\n" \
-    "1.Projection of a orthogonal to b\n3.Exit\nEnter:"))
+    userInput=int(input("Enter What You want to do\n1.Projection of a  onto b\n" \
+    "1.Projection of b  onto a\n3.Exit\nEnter:"))
 
     if(userInput==3):
         break
