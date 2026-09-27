@@ -23,7 +23,7 @@ sp.pprint(A)
 
 # RREF
 rref_matrix, pivot_columns = A.rref()
-
+sp.pprint(A.echelon_form())
 print("\nReduced Row Echelon Form (RREF):")
 sp.pprint(rref_matrix)
 sp.pprint(pivot_columns)
